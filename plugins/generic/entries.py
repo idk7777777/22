@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+ #!/usr/bin/env python
 
 """
 Copyright (c) 2006-2022 sqlmap developers (https://sqlmap.org/)

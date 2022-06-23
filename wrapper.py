@@ -373,9 +373,6 @@ def sqlmap_dump(url, check_timeout, proxy=None):
                 '--proxy=%s://%s' % (
                     wrapper_config.PROXY_TYPE, 
                     proxy),
-                '--proxy-cred=%s:%s' % (
-                    wrapper_config.PROXY_USERNAME, 
-                    wrapper_config.PROXY_PASSWORD),
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
@@ -415,12 +412,6 @@ def sqlmap_dump(url, check_timeout, proxy=None):
                 '--stop=%s' % limit[1],
                 '--dump-format=CSV',
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
-                '--proxy=%s://%s' % (
-                    wrapper_config.PROXY_TYPE, 
-                    proxy),
-                '--proxy-cred=%s:%s' % (
-                    wrapper_config.PROXY_USERNAME, 
-                    wrapper_config.PROXY_PASSWORD),
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',

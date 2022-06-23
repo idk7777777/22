@@ -61,8 +61,8 @@ ALEXA = 1000000
 
 TAMPER = 'space2comment,space2plus,randomcase' # unmagicquotes double
 
-# PROXY = False # False if work without it
-PROXY = True
+PROXY = False # False if work without it
+# PROXY = True
 PROXY_TYPE = 'socks5'
 PROXY_URL = '' # first#
 PROXY_FILE = 'proxy.txt' # second if not first

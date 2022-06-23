@@ -269,7 +269,7 @@ class Entries(object):
                             entries = []
 
                         entriesCount = len(entries)
-                        if entriesCount <= 9999:
+                        if entriesCount <= 12000:
                             break
 
 

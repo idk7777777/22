@@ -65,7 +65,7 @@ DUMP_TXT_FOLDER = os.path.join(
 
 print(DUMP_TXT_FOLDER)
 
-        
+
 STEPS = [10, 100, 300, 500, 1000, 1500, 2000, 3000, 5000, 10000, 20000, 50000, 100000]
 #STEPS = [100]
 
@@ -155,15 +155,10 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--answers="redirect=n,injection marker=Y,Do you want to use those=Y,set its own=Y,retrieved=n,crack=n,store=n,(C)ontinue=c,DBMS=y,include=y,NULL=y,WAF=n,vulnerable=n,optimize=Y,UNION=Y,ORDER=Y,URL=Y,time=N,properly=N,problems=Y,marking=Y,Array-like=Y,original=Y,existence=Y,encode cookie=Y,Are you sure that you want to continue?=Y,target testing=Y,inject inside?=N,file do you want to use?=1"',
                 # '--answers=quit=n,crack=n',
                 '--search',
-                '--exclude-sysdbs',
                 '-C %s' % dump,
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
-                '--proxy=%s://%s' % (
-                    wrapper_config.PROXY_TYPE, 
-                    proxy),
-                '--proxy-cred=%s:%s' % (
-                    wrapper_config.PROXY_USERNAME, 
-                    wrapper_config.PROXY_PASSWORD),
+                '--proxy=%s://%s' % (wrapper_config.PROXY_TYPE, proxy),
+                '--proxy-cred=%s:%s' % (wrapper_config.PROXY_USERNAME,wrapper_config.PROXY_PASSWORD),
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
@@ -193,12 +188,9 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--answers="redirect=n,injection marker=Y,Do you want to use those=Y,set its own=Y,retrieved=n,crack=n,store=n,(C)ontinue=c,DBMS=y,include=y,NULL=y,WAF=n,vulnerable=n,optimize=Y,UNION=Y,ORDER=Y,URL=Y,time=N,properly=N,problems=Y,marking=Y,Array-like=Y,original=Y,existence=Y,encode cookie=Y,Are you sure that you want to continue?=Y,target testing=Y,inject inside?=N,file do you want to use?=1"',
                 # '--answers=quit=n,crack=n',
                 '--search',
-                '--exclude-sysdbs',
                 '-C %s' % dump,
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
-                '--proxy=%s://%s' % (
-                    wrapper_config.PROXY_TYPE, 
-                    proxy),
+                '--proxy=%s://%s' % (wrapper_config.PROXY_TYPE, proxy),
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
@@ -225,7 +217,6 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--count',
                 '--tamper=%s' % wrapper_config.TAMPER,
                 '--search',
-                '--exclude-sysdbs',
                 '-C %s' % dump,
                 '--dump-format=CSV',
                 '--answers="redirect=n,injection marker=Y,Do you want to use those=Y,set its own=Y,retrieved=n,crack=n,store=n,(C)ontinue=c,DBMS=y,include=y,NULL=y,WAF=n,vulnerable=n,optimize=Y,UNION=Y,ORDER=Y,URL=Y,time=N,properly=N,problems=Y,marking=Y,Array-like=Y,original=Y,existence=Y,encode cookie=Y,Are you sure that you want to continue?=Y,target testing=Y,inject inside?=N,file do you want to use?=1"',
@@ -325,12 +316,8 @@ def sqlmap_dump(url, check_timeout, proxy=None):
                 '--stop=%s' % limit[1],
                 '--dump-format=CSV',
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
-                '--proxy=%s://%s' % (
-                    wrapper_config.PROXY_TYPE, 
-                    proxy),
-                '--proxy-cred=%s:%s' % (
-                    wrapper_config.PROXY_USERNAME, 
-                    wrapper_config.PROXY_PASSWORD),
+                '--proxy=%s://%s' % (wrapper_config.PROXY_TYPE,proxy),
+                '--proxy-cred=%s:%s' % (wrapper_config.PROXY_USERNAME, wrapper_config.PROXY_PASSWORD),
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
@@ -368,9 +355,7 @@ def sqlmap_dump(url, check_timeout, proxy=None):
                 '--stop=%s' % limit[1],
                 '--dump-format=CSV',
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
-                '--proxy=%s://%s' % (
-                    wrapper_config.PROXY_TYPE, 
-                    proxy),
+                '--proxy=%s://%s' % (wrapper_config.PROXY_TYPE, proxy),
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
@@ -445,12 +430,8 @@ def sqlmap_dump_all(url, pos, check_timeout, proxy=None):
                 '--dump-all',
                 '--dump-format=CSV',
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
-                '--proxy=%s://%s' % (
-                    wrapper_config.PROXY_TYPE, 
-                    proxy),
-                '--proxy-cred=%s:%s' % (
-                    wrapper_config.PROXY_USERNAME, 
-                    wrapper_config.PROXY_PASSWORD),
+                '--proxy=%s://%s' % (wrapper_config.PROXY_TYPE,proxy),
+                '--proxy-cred=%s:%s' % (wrapper_config.PROXY_USERNAME, wrapper_config.PROXY_PASSWORD),
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
@@ -479,9 +460,7 @@ def sqlmap_dump_all(url, pos, check_timeout, proxy=None):
                 '--dump-all',
                 '--dump-format=CSV',
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
-                '--proxy=%s://%s' % (
-                    wrapper_config.PROXY_TYPE, 
-                    proxy),
+                '--proxy=%s://%s' % (wrapper_config.PROXY_TYPE,proxy),
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
@@ -547,12 +526,8 @@ def sqli_check(url, pos, check_timeout, proxy=None):
                 '--answers=quit=n,crack=n',
                 '--tamper=%s' % wrapper_config.TAMPER,
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
-                '--proxy=%s://%s' % (
-                    wrapper_config.PROXY_TYPE, 
-                    proxy),
-                '--proxy-cred=%s:%s' % (
-                    wrapper_config.PROXY_USERNAME, 
-                    wrapper_config.PROXY_PASSWORD),
+                '--proxy=%s://%s' % (wrapper_config.PROXY_TYPE, proxy),
+                '--proxy-cred=%s:%s' % (wrapper_config.PROXY_USERNAME, wrapper_config.PROXY_PASSWORD),
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
@@ -578,9 +553,7 @@ def sqli_check(url, pos, check_timeout, proxy=None):
                 '--answers=quit=n,crack=n',
                 '--tamper=%s' % wrapper_config.TAMPER,
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
-                '--proxy=%s://%s' % (
-                    wrapper_config.PROXY_TYPE, 
-                    proxy),
+                '--proxy=%s://%s' % (wrapper_config.PROXY_TYPE, proxy),
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
@@ -772,7 +745,7 @@ def find_log(url):
                     if os.path.getsize(dirpath + '/' + filelog) > 0:
                         open(wrapper_config.SQLi_SAVE_FILE, 'a+').write(url + '\n')
                         del_dub(wrapper_config.SQLi_SAVE_FILE)
-      
+
 def get_size(start_path):
     total_size = 0
     for dirpath, dirnames, filenames in os.walk(start_path):
@@ -953,7 +926,6 @@ def threads():
                 else:
                     pool.apply_async(sqlmap_dump_all, 
                         (clean_url(url), position, 56000))
-
 
         pool.close()
         pool.join()

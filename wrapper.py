@@ -155,7 +155,6 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--answers="redirect=n,injection marker=Y,Do you want to use those=Y,set its own=Y,retrieved=n,crack=n,store=n,(C)ontinue=c,DBMS=y,include=y,NULL=y,WAF=n,vulnerable=n,optimize=Y,UNION=Y,ORDER=Y,URL=Y,time=N,properly=N,problems=Y,marking=Y,Array-like=Y,original=Y,existence=Y,encode cookie=Y,Are you sure that you want to continue?=Y,target testing=Y,inject inside?=N,file do you want to use?=1"',
                 # '--answers=quit=n,crack=n',
                 '--search',
-                '--exclude-sysdbs',
                 '-C %s' % dump,
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
                 '--proxy=%s://%s' % (
@@ -193,7 +192,6 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--answers="redirect=n,injection marker=Y,Do you want to use those=Y,set its own=Y,retrieved=n,crack=n,store=n,(C)ontinue=c,DBMS=y,include=y,NULL=y,WAF=n,vulnerable=n,optimize=Y,UNION=Y,ORDER=Y,URL=Y,time=N,properly=N,problems=Y,marking=Y,Array-like=Y,original=Y,existence=Y,encode cookie=Y,Are you sure that you want to continue?=Y,target testing=Y,inject inside?=N,file do you want to use?=1"',
                 # '--answers=quit=n,crack=n',
                 '--search',
-                '--exclude-sysdbs',
                 '-C %s' % dump,
                 '--output-dir=%s' % wrapper_config.SQLMAP_DUMPS,
                 '--proxy=%s://%s' % (
@@ -225,7 +223,6 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--count',
                 '--tamper=%s' % wrapper_config.TAMPER,
                 '--search',
-                '--exclude-sysdbs',
                 '-C %s' % dump,
                 '--dump-format=CSV',
                 '--answers="redirect=n,injection marker=Y,Do you want to use those=Y,set its own=Y,retrieved=n,crack=n,store=n,(C)ontinue=c,DBMS=y,include=y,NULL=y,WAF=n,vulnerable=n,optimize=Y,UNION=Y,ORDER=Y,URL=Y,time=N,properly=N,problems=Y,marking=Y,Array-like=Y,original=Y,existence=Y,encode cookie=Y,Are you sure that you want to continue?=Y,target testing=Y,inject inside?=N,file do you want to use?=1"',

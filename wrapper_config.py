@@ -76,5 +76,5 @@ THREADS = 800
 DELETE = False
 
 RISK = 3
-LEVEL = 5
+LEVEL = 3
 RETRIES = '5'

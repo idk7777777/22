@@ -44,7 +44,7 @@ ADMIN_FOLDER = 'admdump'
 
 ADMIN_HACK_SAVE = 'adminhacksave.txt'
 
-COLUMN_DUMP = 'user,login,clave,correo,hash,heslo,jelszo,mail,parola,pass,posta,psw,pw,senha,salt,md5,sha1,tel,mobile,phone,number'
+COLUMN_DUMP = 'user,login,clave,correo,hash,heslo,jelszo,mail,parola,pass,posta,psw,pw,senha,salt,md5,sha1,tel,mobile,phone,number,country'
 
 SPIDER = True
 SPIDER_LINKS = '10'

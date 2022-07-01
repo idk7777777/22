@@ -252,7 +252,7 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
         async_tables_pool = Pool()
         for db, tables in list(dbs_data.items()):
             for table, num in list(tables.items()):
-                for step in STEPS: #STEPS = [10,100, 300, 500, 1000, 1500, 2000, 3000, 5000, 10000, 20000, 50000, 100000]
+                for step in STEPS:
                     if int(num) > step:
                         try:
                             async_tables_pool.apply_async( 

@@ -231,7 +231,6 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
-                '--eta',
             ])
         psu_process = Process(process.pid)
         try:
@@ -404,7 +403,6 @@ def sqlmap_dump(url, check_timeout, proxy=None):
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
-                '--eta',
             ])
         psu_process = Process(process.pid)
         try:

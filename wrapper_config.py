@@ -18,7 +18,7 @@ DUMP_ALL = False
 Check_SQLi = False
 
 start = 1
-stop = 100000000
+stop = 1000
 
 Robots = True
 ROBOTS_SAVE = 'goodrobots.txt'
@@ -44,7 +44,7 @@ ADMIN_FOLDER = 'admdump'
 
 ADMIN_HACK_SAVE = 'adminhacksave.txt'
 
-COLUMN_DUMP = 'user,login,clave,correo,hash,heslo,jelszo,mail,parola,pass,posta,psw,pw,senha,salt,md5,sha1,tel,mobile,phone,number,country'
+COLUMN_DUMP = 'clave,hash,heslo,jelszo,parola,pass,posta,psw,pw,senha,salt,md5,sha1'
 
 SPIDER = True
 SPIDER_LINKS = '10'

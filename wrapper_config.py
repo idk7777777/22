@@ -18,7 +18,7 @@ DUMP_ALL = False
 Check_SQLi = False
 
 start = 1
-stop = 1000
+stop = 500
 
 Robots = True
 ROBOTS_SAVE = 'goodrobots.txt'

@@ -231,6 +231,7 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
+                '--eta',
             ])
         psu_process = Process(process.pid)
         try:
@@ -304,7 +305,6 @@ def sqlmap_dump(url, check_timeout, proxy=None):
                 'sqlmap.py',
                 '--url=%s' % url,
                 '--batch',
-                '--hex',
                 '--time-sec=30',
                 '--level=%s' % wrapper_config.LEVEL,
                 '--risk=%s' % wrapper_config.RISK,
@@ -346,7 +346,6 @@ def sqlmap_dump(url, check_timeout, proxy=None):
                 'sqlmap.py',
                 '--url=%s' % url,
                 '--batch',
-                '--hex',
                 '--time-sec=30',
                 '--level=%s' % wrapper_config.LEVEL,
                 '--risk=%s' % wrapper_config.RISK,
@@ -385,7 +384,6 @@ def sqlmap_dump(url, check_timeout, proxy=None):
                 'sqlmap.py',
                 '--url=%s' % url,
                 '--batch',
-                '--hex',
                 '--time-sec=15',
                 '--level=%s' % wrapper_config.LEVEL,
                 '--risk=%s' % wrapper_config.RISK,
@@ -406,6 +404,7 @@ def sqlmap_dump(url, check_timeout, proxy=None):
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
+                '--eta',
             ])
         psu_process = Process(process.pid)
         try:

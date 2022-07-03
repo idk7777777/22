@@ -59,7 +59,7 @@ TIMEOUT = 180 # sec
 ALEXA_CHECK = False
 ALEXA = 1000000
 
-TAMPER = 'space2comment,space2plus,randomcase' # unmagicquotes double
+TAMPER = 'space2comment,space2plus,randomcase' # unmagicquotes double urlencode randomunicode apostrophemask
 
 PROXY = False # False if work without it
 # PROXY = True

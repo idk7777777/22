@@ -15,7 +15,7 @@ def dependencies():
 def tamper(payload, **kwargs):
 
     if payload:
-        # payload = payload.replace(" ","/*!*/")
+        payload = payload.replace(" ","/*!*/")
         payload = payload.replace("=","/*!*/=/*!*/")
         payload = payload.replace("AND","/*!*/AND/*!*/")
         payload = payload.replace("UNION","union/*!88888cas*/")

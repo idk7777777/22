@@ -378,7 +378,7 @@ def sqlmap_dump(url, check_timeout, proxy=None):
                 'sqlmap.py',
                 '--url=%s' % url,
                 '--batch',
-                '--time-sec=15',
+                '--time-sec=30',
                 '--level=%s' % wrapper_config.LEVEL,
                 '--risk=%s' % wrapper_config.RISK,
                 '--random-agent',

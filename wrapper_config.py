@@ -53,7 +53,7 @@ SQLMAP_DUMPS = 'dumps'
 WRAPPER_TXT_DUMPS = 'txt_dumps'
 DUMP_FORMAT='CSV'
 
-time_sec = 30
+time_sec = 32
 TIMEOUT = 180 # sec
 
 ALEXA_CHECK = False
@@ -77,4 +77,4 @@ DELETE = False
 
 RISK = 3
 LEVEL = 5
-RETRIES = '5'
+RETRIES = '8'

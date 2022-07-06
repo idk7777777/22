@@ -165,6 +165,8 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
+                '--common-tables',
+                '--common-columns',
             ])
         psu_process = Process(process.pid)
         try:
@@ -198,6 +200,8 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
+                '--common-tables',
+                '--common-columns',
             ])
         psu_process = Process(process.pid)
         try:
@@ -228,6 +232,8 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--timeout=%s' % wrapper_config.TIMEOUT,
                 '--retries=%s' % wrapper_config.RETRIES,
                 '--technique=BEUSQ',
+                '--common-tables',
+                '--common-columns',
             ])
         psu_process = Process(process.pid)
         try:

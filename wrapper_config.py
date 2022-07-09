@@ -59,7 +59,7 @@ TIMEOUT = 180 # sec
 ALEXA_CHECK = False
 ALEXA = 1000000
 
-TAMPER = 'space2comment,unmagicquotes,randomcase' # safedog,doublekeywords,randombackspace,doubleurlencode   space2comment,randomcase,unmagicquotes,space2plus
+TAMPER = 'space2comment,between,randomcase' # safedog,doublekeywords,randombackspace,doubleurlencode   space2comment,randomcase,between,unmagicquotes,space2plus
 
 PROXY = False # False if work without it
 # PROXY = True

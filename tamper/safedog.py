@@ -6,7 +6,6 @@ See the file 'LICENSE' for copying permission
 """
 import random
 from lib.core.enums import PRIORITY
-from lib.core.common import singleTimeWarnMessage
 from lib.core.settings import UNICODE_ENCODING
 __priority__ = PRIORITY.LOW
 
@@ -17,10 +16,9 @@ def tamper(payload, **kwargs):
     # chars1 = ['%01', '%02', '%03', '%04', '%05', '%06', '%07', '%08', '%09', '%0A', '%0B', '%0C', '%0D', '%0E', '%0F',
     #           '%10', '%11', '%12', '%13', '%14', '%15', '%16', '%17', '%18', '%19', '%1A', '%1B', '%1C', '%1D', '%1E', '%1F', '%20']
 
-    # chars2 = ["/**/", "/*!*/", "/*!safe6*/", "+", "%0A" ]
+    # chars2 = ["/**/", "/*!*/", "/*!safe6*/"] #, "+"]
 
     # v = random.choice(chars1)
-    singleTimeWarnMessage("汪汪队出击!")
 
     if payload:
         payload = payload.replace(" ","/*!*/")

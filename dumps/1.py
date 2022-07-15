@@ -13,7 +13,7 @@ while (i < len(output)):
         size = (os.path.getsize(dir_path + '/' + output[i] + "/log"))
         print(size)
         print(output[i])
-        if size < 1000000:
+        if size < 700000:
             shutil.rmtree(dirr)
     except:
         print("ERR")

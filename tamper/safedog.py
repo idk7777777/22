@@ -4,21 +4,21 @@
 Copyright (c) 2006-2022 sqlmap developers (http://sqlmap.org/)
 See the file 'LICENSE' for copying permission
 """
-import os
 import random
+import os
 from lib.core.enums import PRIORITY
 from lib.core.settings import UNICODE_ENCODING
+__priority__ = PRIORITY.HIGHEST
 from lib.core.common import singleTimeWarnMessage
 from lib.core.data import kb
 from lib.core.enums import DBMS
-__priority__ = PRIORITY.LOW
 
 def dependencies():
     pass
 
 
 def dependencies():
-    singleTimeWarnMessage("汪汪队出发!'%s' only %s" % (os.path.basename(__file__).split(".")[0], DBMS.MYSQL))
+    singleTimeWarnMessage("Bypass safedog by l1b3ri'%s' only %s" % (os.path.basename(__file__).split(".")[0], DBMS.MYSQL))
 
 
 def tamper(payload, **kwargs):

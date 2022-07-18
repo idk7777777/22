@@ -9,7 +9,7 @@ import random
 from lib.core.data import kb
 from lib.core.enums import PRIORITY
 
-__priority__ = PRIORITY.NORMAL
+__priority__ = PRIORITY.LOWEST
 
 def dependencies():
     pass

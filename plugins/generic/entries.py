@@ -1,4 +1,4 @@
- #!/usr/bin/env python
+#!/usr/bin/env python
 
 """
 Copyright (c) 2006-2022 sqlmap developers (https://sqlmap.org/)
@@ -68,7 +68,7 @@ class Entries(object):
                 warnMsg = "missing database parameter. sqlmap is going "
                 warnMsg += "to use the current database to enumerate "
                 warnMsg += "table(s) entries"
-                logger.warn(warnMsg)
+                logger.warning(warnMsg)
 
             conf.db = self.getCurrentDb()
 
@@ -122,7 +122,7 @@ class Entries(object):
 
             conf.tbl = tbl
             kb.data.dumpedTable = {}
-           # print(tblList)
+            # print(tblList)
 
             if foundData is None:
                 kb.data.cachedColumns = {}
@@ -138,17 +138,14 @@ class Entries(object):
                 else:
                     kb.dumpTable = "%s.%s" % (conf.db, tbl)
 
-
-
                 if safeSQLIdentificatorNaming(conf.db) not in kb.data.cachedColumns or safeSQLIdentificatorNaming(tbl, True) not in kb.data.cachedColumns[safeSQLIdentificatorNaming(conf.db)] or not kb.data.cachedColumns[safeSQLIdentificatorNaming(conf.db)][safeSQLIdentificatorNaming(tbl, True)]:
                     warnMsg = "unable to enumerate the columns for table '%s'" % unsafeSQLIdentificatorNaming(tbl)
                     if METADB_SUFFIX not in conf.db:
                         warnMsg += " in database '%s'" % unsafeSQLIdentificatorNaming(conf.db)
                     warnMsg += ", skipping" if len(tblList) > 1 else ""
-                    logger.warn(warnMsg)
+                    logger.warning(warnMsg)
 
                     continue
-
 
                 columns = kb.data.cachedColumns[safeSQLIdentificatorNaming(conf.db)][safeSQLIdentificatorNaming(tbl, True)]
                 print(columns)
@@ -162,7 +159,7 @@ class Entries(object):
                     if METADB_SUFFIX not in conf.db:
                         warnMsg += " in database '%s'" % unsafeSQLIdentificatorNaming(conf.db)
                     warnMsg += " (no usable column names)"
-                    logger.warn(warnMsg)
+                    logger.warning(warnMsg)
                     continue
 
                 kb.dumpColumns = [unsafeSQLIdentificatorNaming(_) for _ in colList]
@@ -228,7 +225,7 @@ class Entries(object):
                                         kb.dumpKeyboardInterrupt = True
                                         clearConsoleLine()
                                         warnMsg = "Ctrl+C detected in dumping phase"
-                                        logger.warn(warnMsg)
+                                        logger.warning(warnMsg)
 
                             if isNoneValue(entries) and not kb.dumpKeyboardInterrupt:
                                 try:
@@ -238,7 +235,7 @@ class Entries(object):
                                     kb.dumpKeyboardInterrupt = True
                                     clearConsoleLine()
                                     warnMsg = "Ctrl+C detected in dumping phase"
-                                    logger.warn(warnMsg)
+                                    logger.warning(warnMsg)
 
                                 if retVal:
                                     entries, _ = retVal
@@ -260,7 +257,7 @@ class Entries(object):
                             kb.dumpKeyboardInterrupt = True
                             clearConsoleLine()
                             warnMsg = "Ctrl+C detected in dumping phase"
-                            logger.warn(warnMsg)
+                            logger.warning(warnMsg)
 
                     if not isNoneValue(entries):
                         if isinstance(entries, six.string_types):
@@ -271,8 +268,6 @@ class Entries(object):
                         entriesCount = len(entries)
                         if entriesCount <= 12000:
                             break
-
-
 
                         for index, column in enumerate(colList):
                             if column not in kb.data.dumpedTable:
@@ -324,7 +319,7 @@ class Entries(object):
                         warnMsg = "table '%s' " % unsafeSQLIdentificatorNaming(tbl)
                         warnMsg += "in database '%s' " % unsafeSQLIdentificatorNaming(conf.db)
                         warnMsg += "appears to be empty"
-                        logger.warn(warnMsg)
+                        logger.warning(warnMsg)
 
                         for column in colList:
                             lengths[column] = len(column)
@@ -336,7 +331,7 @@ class Entries(object):
                             warnMsg += "column(s) '%s' " % colNames
                         warnMsg += "entries for table '%s' " % unsafeSQLIdentificatorNaming(tbl)
                         warnMsg += "in database '%s'" % unsafeSQLIdentificatorNaming(conf.db)
-                        logger.warn(warnMsg)
+                        logger.warning(warnMsg)
 
                         continue
 
@@ -376,7 +371,7 @@ class Entries(object):
                                 kb.dumpKeyboardInterrupt = True
                                 clearConsoleLine()
                                 warnMsg = "Ctrl+C detected in dumping phase"
-                                logger.warn(warnMsg)
+                                logger.warning(warnMsg)
 
                         if not entries and not kb.dumpKeyboardInterrupt:
                             try:
@@ -386,7 +381,7 @@ class Entries(object):
                                 kb.dumpKeyboardInterrupt = True
                                 clearConsoleLine()
                                 warnMsg = "Ctrl+C detected in dumping phase"
-                                logger.warn(warnMsg)
+                                logger.warning(warnMsg)
 
                             if retVal:
                                 entries, lengths = retVal
@@ -447,7 +442,7 @@ class Entries(object):
                             kb.dumpKeyboardInterrupt = True
                             clearConsoleLine()
                             warnMsg = "Ctrl+C detected in dumping phase"
-                            logger.warn(warnMsg)
+                            logger.warning(warnMsg)
 
                     for column, columnEntries in entries.items():
                         length = max(lengths[column], len(column))
@@ -462,7 +457,7 @@ class Entries(object):
                         warnMsg += "of columns '%s' " % colNames
                     warnMsg += "for table '%s' " % unsafeSQLIdentificatorNaming(tbl)
                     warnMsg += "in database '%s'%s" % (unsafeSQLIdentificatorNaming(conf.db), " (permission denied)" if kb.permissionFlag else "")
-                    logger.warn(warnMsg)
+                    logger.warning(warnMsg)
                 else:
                     kb.data.dumpedTable["__infos__"] = {"count": entriesCount,
                                                         "table": safeSQLIdentificatorNaming(tbl, True),

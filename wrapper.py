@@ -223,6 +223,7 @@ def sqlmap_check(url, pos, check_timeout, proxy=None):
                 '--count',
                 '--tamper=%s' % wrapper_config.TAMPER,
                 '--search',
+                #'--dbms=MySQL',
                 '--exclude-sysdbs',
                 '-C %s' % dump,
                 '--dump-format=CSV',

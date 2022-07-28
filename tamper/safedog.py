@@ -14,12 +14,8 @@ from lib.core.data import kb
 from lib.core.enums import DBMS
 
 def dependencies():
+    singleTimeWarnMessage('汪汪队出击!')
     pass
-
-
-def dependencies():
-    singleTimeWarnMessage("Bypass safedog by l1b3ri'%s' only %s" % (os.path.basename(__file__).split(".")[0], DBMS.MYSQL))
-
 
 def tamper(payload, **kwargs):
     # chars1 = ['%01', '%02', '%03', '%04', '%05', '%06', '%07', '%08', '%09', '%0A', '%0B', '%0C', '%0D', '%0E', '%0F',

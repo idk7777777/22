@@ -266,7 +266,7 @@ class Entries(object):
                             entries = []
 
                         entriesCount = len(entries)
-                        if entriesCount <= 15000:
+                        if entriesCount <= 20000:
                             break
 
                         for index, column in enumerate(colList):
